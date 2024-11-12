@@ -50,7 +50,7 @@ namespace MMABooksTests
             // get a list of all of the customers who live in OR
             customers = dbContext.Customers.Where(c => c.StateCode.Equals("OR")).OrderBy(c => c.Name).ToList();
             Assert.AreEqual(5, customers.Count);
-            //Assert.AreEqual("Erpenbach, Lee", )
+            Assert.AreEqual("Erpenbach, Lee", customers[0].Name);
         }
 
         [Test]
@@ -93,7 +93,7 @@ namespace MMABooksTests
         public void CreateTest()
         {
             c = new Customer();
-            c.StateCode = "??";
+            c.StateCode = "OR";
             c.Name = "??????";
             c.Address = "??????";
             c.City = "?????";
